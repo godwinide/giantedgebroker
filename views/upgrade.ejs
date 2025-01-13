@@ -1,0 +1,373 @@
+<style>
+.investment-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    margin-bottom: 40px;
+}
+
+.investment-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.investment-card .card-body {
+    padding: 2rem;
+}
+
+.investment-card .card-title {
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.investment-card .price {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #3498db;
+    margin: 1.5rem 0;
+}
+
+.investment-card .roi {
+    color: #27ae60;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.investment-card .feature-list {
+    margin: 1.5rem 0;
+}
+
+.investment-card .feature-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.investment-card .feature-list li:last-child {
+    border-bottom: none;
+}
+
+.investment-card .feature-list i {
+    color: #27ae60;
+    margin-right: 10px;
+}
+
+._upgrade_ {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+._upgrade_:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+@media (max-width: 768px) {
+    .investment-card {
+        margin-bottom: 40px;
+    }
+    
+    .investment-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .investment-card .price {
+        font-size: 2rem;
+    }
+    
+    .investment-card .roi {
+        font-size: 1.1rem;
+    }
+}
+
+.package-col {
+    margin-bottom: 3rem;
+}
+
+.custom-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 9999;
+}
+
+.modal-content {
+    position: relative;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    color: white;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.modal-body {
+    text-align: center;
+    padding: 20px;
+}
+
+.modal-icon {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+.package-details {
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s;
+}
+</style>
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4 fw-bold" style="color: #2a85e0;">Investment Packages</h1>
+        <p class="lead text-white">Choose the investment package that suits your financial goals</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- $500 Package -->
+        <div class="col-12 col-md-6 col-lg-4 package-col">
+            <div class="card investment-card h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Starter Package</h3>
+                    <div class="price text-center">$500</div>
+                    <div class="roi text-center">ROI: $1,800</div>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i>Daily Payments</li>
+                        <li><i class="fas fa-shield-alt"></i>Secure Investment</li>
+                        <li><i class="fas fa-chart-line"></i>Performance Tracking</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="_upgrade_" amt="500" pck="STARTER PACKAGE">Get Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- $1,000 Package -->
+        <div class="col-12 col-md-6 col-lg-4 package-col">
+            <div class="card investment-card h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Basic Package</h3>
+                    <div class="price text-center">$1,000</div>
+                    <div class="roi text-center">ROI: $4,000</div>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i>Daily Payments</li>
+                        <li><i class="fas fa-shield-alt"></i>Secure Investment</li>
+                        <li><i class="fas fa-chart-line"></i>Performance Tracking</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="_upgrade_" amt="1000" pck="BASIC PACKAGE">Get Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- $5,000 Package -->
+        <div class="col-12 col-md-6 col-lg-4 package-col">
+            <div class="card investment-card h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Standard Package</h3>
+                    <div class="price text-center">$5,000</div>
+                    <div class="roi text-center">ROI: $18,500</div>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i>Daily Payments</li>
+                        <li><i class="fas fa-shield-alt"></i>Secure Investment</li>
+                        <li><i class="fas fa-chart-line"></i>Performance Tracking</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="_upgrade_" amt="5000" pck="STANDARD PACKAGE">Get Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- $10,000 Package -->
+        <div class="col-12 col-md-6 col-lg-4 package-col">
+            <div class="card investment-card h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Premium Package</h3>
+                    <div class="price text-center">$10,000</div>
+                    <div class="roi text-center">ROI: $40,000</div>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i>Daily Payments</li>
+                        <li><i class="fas fa-shield-alt"></i>Secure Investment</li>
+                        <li><i class="fas fa-chart-line"></i>Performance Tracking</li>
+                        <li><i class="fas fa-star"></i>Priority Support</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="_upgrade_" amt="10000" pck="PREMIUM PACKAGE">Get Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- $40,000 Package -->
+        <div class="col-12 col-md-6 col-lg-4 package-col">
+            <div class="card investment-card h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Elite Package</h3>
+                    <div class="price text-center">$40,000</div>
+                    <div class="roi text-center">ROI: $160,000</div>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i>Daily Payments</li>
+                        <li><i class="fas fa-shield-alt"></i>Secure Investment</li>
+                        <li><i class="fas fa-chart-line"></i>Performance Tracking</li>
+                        <li><i class="fas fa-star"></i>Priority Support</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="_upgrade_" amt="40000" pck="ELITE PACKAGE">Get Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- $50,000 Package -->
+        <div class="col-12 col-md-6 col-lg-4 package-col">
+            <div class="card investment-card h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Pro Package</h3>
+                    <div class="price text-center">$50,000</div>
+                    <div class="roi text-center">ROI: $200,000</div>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i>Daily Payments</li>
+                        <li><i class="fas fa-shield-alt"></i>Secure Investment</li>
+                        <li><i class="fas fa-chart-line"></i>Performance Tracking</li>
+                        <li><i class="fas fa-star"></i>Priority Support</li>
+                        <li><i class="fas fa-user-tie"></i>Dedicated Manager</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="_upgrade_" amt="50000" pck="PRO PACKAGE">Get Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- $100,000 Package -->
+        <div class="col-12 col-md-6 col-lg-4 package-col">
+            <div class="card investment-card h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">Executive Package</h3>
+                    <div class="price text-center">$100,000</div>
+                    <div class="roi text-center">ROI: $400,000</div>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i>Daily Payouts</li>
+                        <li><i class="fas fa-shield-alt"></i>Secure Investment</li>
+                        <li><i class="fas fa-chart-line"></i>Performance Tracking</li>
+                        <li><i class="fas fa-star"></i>Priority Support</li>
+                        <li><i class="fas fa-user-tie"></i>Dedicated Manager</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="_upgrade_" amt="100000" pck="EXECUTIVE PACKAGE">Get Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- $400,000 Package -->
+        <div class="col-12 col-md-6 col-lg-4 package-col">
+            <div class="card investment-card h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-center">VIP Package</h3>
+                    <div class="price text-center">$400,000</div>
+                    <div class="roi text-center">ROI: $1,500,000</div>
+                    <ul class="feature-list list-unstyled">
+                        <li><i class="fas fa-check-circle"></i>Daily Payouts</li>
+                        <li><i class="fas fa-shield-alt"></i>Secure Investment</li>
+                        <li><i class="fas fa-chart-line"></i>Performance Tracking</li>
+                        <li><i class="fas fa-star"></i>Priority Support</li>
+                        <li><i class="fas fa-user-tie"></i>Dedicated Manager</li>
+                        <li><i class="fas fa-crown"></i>VIP Benefits</li>
+                    </ul>
+                    <div class="text-center">
+                        <div class="_upgrade_" amt="400000" pck="VIP PACKAGE">Get Started</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Custom Modal -->
+<div id="customModal" class="custom-modal">
+    <div class="modal-content">
+        <span id="closeModal" class="close-modal">&times;</span>
+        <div class="modal-body">
+            <i class="fas fa-headset modal-icon"></i>
+            <h3>Contact Support</h3>
+            <div id="modalPackageDetails" class="package-details"></div>
+            <p>Please contact our support team to proceed with your upgrade.</p>
+            <p><i class="fas fa-envelope"></i> Email: finanzasmariavirginia@gmail.com</p>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById('customModal');
+    var closeBtn = document.getElementById('closeModal');
+    var upgradeButtons = document.querySelectorAll('._upgrade_');
+    
+    upgradeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            var amount = this.getAttribute('amt');
+            var pck = this.getAttribute('pck');
+            
+            document.getElementById('modalPackageDetails').innerHTML = 
+                'Selected Package: <strong>' + pck + '</strong> ($' + amount + ')';
+            
+            modal.style.display = 'block';
+            modal.classList.add('fade-in');
+        });
+    });
+    
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        modal.classList.remove('fade-in');
+    });
+    
+    window.addEventListener('click', function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+            modal.classList.remove('fade-in');
+        }
+    });
+});
+</script>
